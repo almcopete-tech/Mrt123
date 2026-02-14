@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Neon Strike Mobile</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="hud top-hud">
+      <div class="stat"><span>⭐ Puntos</span><strong id="score">0</strong></div>
+      <div class="stat"><span>❤️ Vida</span><strong id="health">100</strong></div>
+      <div class="stat"><span>🌊 Oleada</span><strong id="wave">1</strong></div>
+      <button id="pauseBtn" class="hud-btn" aria-label="Pausar">⏸</button>
+    </header>
+
+    <section class="arena-wrap">
+      <canvas id="gameCanvas" width="420" height="760" aria-label="Juego shooter 2D"></canvas>
+
+      <div id="overlay" class="overlay show">
+        <div class="panel">
+          <h1>Neon Strike</h1>
+          <p>Desliza para moverte • botón derecho para disparo continuo</p>
+          <ul>
+            <li>Sobrevive oleadas infinitas.</li>
+            <li>Recoge mejoras y usa la habilidad especial.</li>
+            <li>Ideal para móvil (controles táctiles).</li>
+          </ul>
+          <button id="startBtn" class="primary">Iniciar partida</button>
+        </div>
+      </div>
+
+      <div class="touch-layer" aria-hidden="true">
+        <div id="joystickZone" class="joystick-zone">
+          <div id="joystickBase" class="joystick-base hidden">
+            <div id="joystickKnob" class="joystick-knob"></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="shootBtn" class="action-btn shoot">🔥</button>
+          <button id="skillBtn" class="action-btn skill">⚡</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="hud bottom-hud">
+      <div class="stat"><span>🔫 Arma</span><strong id="weapon">Pulse x1</strong></div>
+      <div class="stat"><span>⚡ Especial</span><strong id="skillCooldown">Lista</strong></div>
+      <div class="stat"><span>🏆 Récord</span><strong id="highScore">0</strong></div>
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
