@@ -1,0 +1,199 @@
+:root {
+  --bg: #05070f;
+  --accent: #18e0c8;
+  --accent2: #ff4d6d;
+  --gold: #ffd166;
+  --text: #e8f1ff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: var(--text);
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
+#game-root {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at 50% 0%, #0d1530 0%, #05070f 70%);
+}
+
+.hidden { display: none !important; }
+
+/* ---------- HUD ---------- */
+#hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: max(14px, env(safe-area-inset-top)) 18px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hud-left { display: flex; gap: 22px; }
+
+.hud-item {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.hud-item span:last-child {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(24, 224, 200, 0.6);
+}
+
+.hud-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  font-weight: 700;
+}
+
+.lives { display: flex; gap: 6px; }
+
+.life {
+  width: 20px;
+  height: 20px;
+  background: var(--accent2);
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  box-shadow: 0 0 10px rgba(255, 77, 109, 0.7);
+}
+
+/* ---------- Overlays ---------- */
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 24px;
+  background: rgba(5, 7, 15, 0.82);
+  backdrop-filter: blur(6px);
+}
+
+.overlay h1 {
+  font-size: clamp(34px, 11vw, 68px);
+  font-weight: 900;
+  letter-spacing: 4px;
+  line-height: 0.95;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+.overlay h1 span {
+  color: var(--accent);
+  text-shadow: 0 0 24px rgba(24, 224, 200, 0.7);
+}
+
+.overlay h1.go span { color: var(--accent2); text-shadow: 0 0 24px rgba(255, 77, 109, 0.7); }
+
+.tagline {
+  font-size: 15px;
+  opacity: 0.85;
+  margin-bottom: 22px;
+  max-width: 320px;
+}
+
+.instructions {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.9;
+  opacity: 0.9;
+}
+
+.instructions li::before {
+  content: "▸ ";
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.pwr { color: var(--gold); font-weight: 700; }
+
+.btn {
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--bg);
+  background: linear-gradient(135deg, var(--accent), #6df0e0);
+  border: none;
+  border-radius: 14px;
+  padding: 16px 52px;
+  cursor: pointer;
+  box-shadow: 0 8px 30px rgba(24, 224, 200, 0.45);
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.btn:active { transform: scale(0.95); box-shadow: 0 4px 16px rgba(24, 224, 200, 0.35); }
+
+.final-stats {
+  display: flex;
+  gap: 26px;
+  margin-bottom: 30px;
+}
+
+.final-stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.final-stats span:last-child {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.icon-btn {
+  position: absolute;
+  top: max(12px, env(safe-area-inset-top));
+  right: 50%;
+  transform: translateX(50%);
+  z-index: 6;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(232, 241, 255, 0.3);
+  background: rgba(5, 7, 15, 0.5);
+  color: var(--text);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
