@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dash Prisma</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Fan game inspirado en runners rítmicos</p>
+          <h1>Dash Prisma</h1>
+          <p class="subtitle">
+            Salta, vuela, cambia de gravedad y sobrevive a un circuito de neón generado al ritmo de la velocidad.
+          </p>
+        </div>
+        <div class="score-card">
+          <span>Mejor marca</span>
+          <strong id="bestScore">0 m</strong>
+        </div>
+      </section>
+
+      <section class="game-card">
+        <canvas id="game" width="1100" height="560" aria-label="Juego Dash Prisma"></canvas>
+        <div class="hud">
+          <div><span>Distancia</span><strong id="score">0 m</strong></div>
+          <div><span>Modo</span><strong id="mode">Cubo</strong></div>
+          <div><span>Velocidad</span><strong id="speed">1.0x</strong></div>
+          <div><span>Intentos</span><strong id="attempts">1</strong></div>
+        </div>
+        <div id="overlay" class="overlay">
+          <h2>Dash Prisma</h2>
+          <p>
+            Pulsa <kbd>Espacio</kbd>, <kbd>↑</kbd> o toca la pantalla para saltar. Mantén pulsado en modo nave.
+          </p>
+          <button id="startButton">Comenzar</button>
+        </div>
+      </section>
+
+      <section class="features">
+        <article>
+          <h3>Obstáculos variados</h3>
+          <p>Picos, bloques, portales, orbes y plataformas móviles crean una carrera exigente y diferente.</p>
+        </article>
+        <article>
+          <h3>Física de arcade</h3>
+          <p>El cubo rota con cada salto y la nave responde con propulsión suave para secciones aéreas.</p>
+        </article>
+        <article>
+          <h3>Progresión infinita</h3>
+          <p>La velocidad sube con la distancia, el fondo pulsa y tu mejor marca queda guardada en el navegador.</p>
+        </article>
+      </section>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>
